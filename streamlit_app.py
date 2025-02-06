@@ -80,7 +80,7 @@ win = st.number_input("素数", min_value=2)
 st.write('y^2=x^3+1割る素数')
 weight = st.number_input("体重を入力してください", min_value=0)
 st.write(weight*weight*weight)
-weighta = st.number_input("体重を入力してください", min_value=0)      
+weighta = st.number_input("体重を入力しください", min_value=0)      
 
 pt1 = (weight,weighta)
 
