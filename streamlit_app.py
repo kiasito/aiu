@@ -88,8 +88,5 @@ if st.button("クリック"):
     kannsuu=win
     ell = EllipticCurveModPrimeNum(1,0,0,1,win)
     st.write(ell.sum(st.session_state.変数,st.session_state.変数))
-    for k in range(2,100):
-        pt(k)=ell.sum(pt(k-1),pt(k-1))
-        st.write(ptk)
-         
+  
    
