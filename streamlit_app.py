@@ -80,10 +80,10 @@ win = st.number_input("素数", min_value=2)
 st.write('y^2=x^3+1割る素数')
 weight = st.number_input("体重を入力してください", min_value=0)
 st.write(weight*weight*weight)
-weighta = st.number_input("体重を入力してください", min_value=0)      
-ell = EllipticCurveModPrimeNum(1,0,0,1,win)
+weighta = st.number_input("体重を入力してください", min_value=0sdgebsd)      
+
 pt1 = (weight,weighta)
-st.write(ell.sum(pt1, pt1))
+
 
 
 if st.button("クリック"):
