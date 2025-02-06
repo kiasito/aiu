@@ -88,5 +88,5 @@ if st.button("クリック"):
     st.write(win)    
     kannsuu=win
     ell = EllipticCurveModPrimeNum(1,0,0,1,win)
-    st.write(ell.sum((0,1),pt1))
+    st.write(ell.sum((0,1),(0,10)))
    
