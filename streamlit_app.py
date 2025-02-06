@@ -81,7 +81,7 @@ st.write('y^2=x^3+1割る素数')
 weight = st.number_input("体重を入力してください", min_value=0)
 st.write(weight*weight*weight)
 weighta = st.number_input("体重を入力しください", min_value=0)      
-
+st.write(weighta*weighta)
 pt1 = (weight,weighta)
 
 
