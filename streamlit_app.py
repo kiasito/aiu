@@ -79,7 +79,7 @@ class EllipticCurveModPrimeNum():
 win = st.number_input("素数", min_value=2)  
 st.write('y^2=x^3+1割る素数')
 weight = st.number_input("体重を入力してください", min_value=0)
-st.wrint(weight^3)
+st.write(weight^3)
 weighta = st.number_input("体重を入力してください", min_value=1)      
 ell = EllipticCurveModPrimeNum(1,0,0,1,win)
 pt1 = (weight,weighta)
