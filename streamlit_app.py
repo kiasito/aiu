@@ -75,13 +75,15 @@ class EllipticCurveModPrimeNum():
             ) % self.p
 
             return (x3, y3)
-win = st.number_input("素数", min_value=11)        
+win = st.number_input("素数", min_value=11)  
+weight = st.number_input("体重を入力してください", min_value=0)
+weighta = st.number_input("体重を入力してください", min_value=1)      
 ell = EllipticCurveModPrimeNum(1,0,0,1,kannsuu)
-pt1 = (0,1)
+pt1 = (weight,weighta)
 st.write(ell.sum(pt1, pt1))
 st.session_state['変数']=pt1
 st.session_state.変数=pt1
-weight = st.number_input("体重を入力してください", min_value=0)
+
 
 if st.button("クリック"):
     st.write(st.session_state.変数)
