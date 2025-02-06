@@ -89,5 +89,7 @@ if st.button("クリック"):
     st.session_state['変数']=pt1
     st.session_state.変数=pt1
     st.write(ell.sum(st.session_state.変数,st.session_state.変数))
-    st.session_state.変数+=st.session_state.変数
+    st.session_state.変数 += st.session_state.変数
+    st.write(ell.sum(st.session_state.変数,st.session_state.変数))
+    
    
