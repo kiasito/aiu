@@ -84,7 +84,6 @@ weighta = st.number_input("体重を入力してください", min_value=0)
 
 pt1 = (weight,weighta)
 
-//aa
 
 if st.button("クリック"):
     
