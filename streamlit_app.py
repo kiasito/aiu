@@ -81,14 +81,12 @@ weighta = st.number_input("体重を入力してください", min_value=1)
 ell = EllipticCurveModPrimeNum(1,0,0,1,kannsuu)
 pt1 = (weight,weighta)
 st.write(ell.sum(pt1, pt1))
-st.session_state['変数']=pt1
-st.session_state.変数=pt1
 
 
 if st.button("クリック"):
-    st.write(st.session_state.変数)
+    
     st.write(win)    
     kannsuu=win
     ell = EllipticCurveModPrimeNum(1,0,0,1,win)
-    st.write(ell.sum(st.session_state.変数,st.session_state.変数))
+    st.write(ell.sum(pt1,pt1))
    
