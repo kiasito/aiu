@@ -82,7 +82,12 @@ weight = st.number_input("体重を入力してください", min_value=0)
 st.write(weight*weight*weight+1)
 weighta = st.number_input("体重を入力しください", min_value=0)      
 st.write(weighta*weighta)
+weightb = st.number_input("体重を入力ください", min_value=0)
+st.write(weight*weight*weight+1)
+weightac = st.number_input("体重を入ください", min_value=0)      
+st.write(weighta*weighta)
 pt1 = (weight,weighta)
+pt2=(weightb,weightac)
 
 
 if st.button("クリック"):
@@ -90,5 +95,5 @@ if st.button("クリック"):
     st.write(win)    
     kannsuu=win
     ell = EllipticCurveModPrimeNum(1,0,0,1,win)
-    st.write(ell.sum(pt1,pt1))
+    st.write(ell.sum(pt1,pt2))
    
