@@ -93,6 +93,7 @@ gg = st.number_input("z",min_value=0)
 st.write(gg*win)
 st.write((weightb*weightb*weightb+1)-(weightac*weightac))
 
+
 if st.button("クリック"):
     
     st.write(win)    
