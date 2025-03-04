@@ -88,7 +88,7 @@ weightac = st.number_input("Yを入ください", min_value=0)
 st.write(weighta*weighta)
 pt1 = (weight,weighta)
 pt2=(weightb,weightac)
-
+st.write("(x,y+(X,Y)")
 
 if st.button("クリック"):
     
