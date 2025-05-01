@@ -7,7 +7,8 @@ st.set_page_config(page_title="タイトル", layout="wide")
 
 # タイトルを設定
 st.title('楕円曲線')
-#daenn
+#daenn 
+from fraction import Fraction
 class EllipticCurve():
     def __init__(self, a, b, c, d):
         if a == 0:
@@ -59,6 +60,7 @@ class EllipticCurve():
                     + (4 * self.b * self.c * self.d - 8 * self.a * self.d**2  - self.c**3)
                  )
             return (x3, y3)
+        
 class EllipticCurveModPrimeNum():
     def __init__(self, a, b, c, d, prime_number):
         if a == 0:
