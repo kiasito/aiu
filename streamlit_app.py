@@ -151,8 +151,8 @@ if st.button("クリック"):
     kannsuu=win
     ell = EllipticCurveModPrimeNum(1,0,0,1,win)
     st.write(ell.sum(pt1,pt2))
-    
-if st.button("クリック"):
+
+if st.button("アタック"):
     
     st.write(win)    
     kannsuu=win
