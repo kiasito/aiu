@@ -8,6 +8,57 @@ st.set_page_config(page_title="タイトル", layout="wide")
 # タイトルを設定
 st.title('楕円曲線')
 #daenn
+class EllipticCurve():
+    def __init__(self, a, b, c, d):
+        if a == 0:
+            raise ValueError("a=0 is forbidden!")
+        self.a = a
+        self.b = b
+        self.c = c
+        self.d = d
+
+    def isin(self, p):
+        if p == 0:
+            return True
+        x, y = p[0], p[1]
+        value = y**2 - self.a * (x ** 3) - self.b * (x**2) - self.c * x - self.d
+        if value == 0:
+            return True
+        return False
+
+    def sum(self, p, q):
+        if not self.isin(p):
+            raise ValueError("{} is not in the elliptic curve".format(p))
+        if not self.isin(q):
+            raise ValueError("{} is not in the elliptic curve".format(q))
+
+        if p == 0:
+            return q
+        if q == 0:
+            return p
+        x1, y1 = p[0], p[1]
+        x2, y2 = q[0], q[1]
+
+        if x1 != x2:
+            x3 = Fraction(1, self.a) * Fraction(y2-y1, x2-x1) ** 2 - Fraction(self.b , self.a) - x1 - x2
+            y3 = Fraction(y2-y1, x2-x1) * -x3 + Fraction(y2*x1 - y1*x2, x2 - x1)
+            return (x3, y3)
+
+        if x1 == x2 and y1 == -1 * y2:
+            return 0
+
+        if x1 == x2 and y1 != -1 * y2:
+            x3 = (Fraction(1, 4 * self.a * y1 ** 2)) *\
+                 (self.a ** 2  * x1 **4 - 2 * self.a * self.c * x1 ** 2\
+                    - 8* self.a * self.d * x1 - 4 * self.b * self.d)
+            y3 = Fraction(1, 8 * self.a * y1 ** 3) *\
+                 (self.a ** 3 * x1 ** 6 + 2 * self.a **2  * self.b * x1 ** 5\
+                    + 5 * self.a**2 * self.c * x1 ** 4  + 20 * self.a ** 2 * self.d * x1 ** 3\
+                    + (20 * self.a * self.b * self.d - 5 * self.a * self.c **2) * x1**2\
+                    + (8 * self.b**2 * self.d - 2 * self.b * self.c**2 - 4 * self.a * self.c * self.d) * x1\
+                    + (4 * self.b * self.c * self.d - 8 * self.a * self.d**2  - self.c**3)
+                 )
+            return (x3, y3)
 class EllipticCurveModPrimeNum():
     def __init__(self, a, b, c, d, prime_number):
         if a == 0:
@@ -100,4 +151,10 @@ if st.button("クリック"):
     kannsuu=win
     ell = EllipticCurveModPrimeNum(1,0,0,1,win)
     st.write(ell.sum(pt1,pt2))
-   
+if st.button("クリック"):
+    
+    st.write(win)    
+    kannsuu=win
+    ell = EllipticCurve(1,0,0,1,win)
+    st.write(ell.sum(pt1,pt2))
+      
