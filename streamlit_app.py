@@ -156,6 +156,6 @@ if st.button("アタック"):
     
     st.write(win)    
     kannsuu=win
-    ell = EllipticCurve(1,0,0,1,win)
+    ell = EllipticCurve(1,0,0,1)
     st.write(ell.sum(pt1,pt2))
       
