@@ -8,7 +8,7 @@ st.set_page_config(page_title="タイトル", layout="wide")
 # タイトルを設定
 st.title('楕円曲線')
 #daenn 
-from fraction import Fraction
+
 class EllipticCurve():
     def __init__(self, a, b, c, d):
         if a == 0:
@@ -41,18 +41,18 @@ class EllipticCurve():
         x2, y2 = q[0], q[1]
 
         if x1 != x2:
-            x3 = Fraction(1, self.a) * Fraction(y2-y1, x2-x1) ** 2 - Fraction(self.b , self.a) - x1 - x2
-            y3 = Fraction(y2-y1, x2-x1) * -x3 + Fraction(y2*x1 - y1*x2, x2 - x1)
+            x3 = (1 / self.a) * ((y2-y1) / (x2-x1)) ** 2 - (self.b / self.a) - x1 - x2
+            y3 = ((y2-y1) / (x2-x1)) * -x3 + ((y2*x1 - y1*x2) / (x2 - x1))
             return (x3, y3)
 
         if x1 == x2 and y1 == -1 * y2:
             return 0
 
         if x1 == x2 and y1 != -1 * y2:
-            x3 = (Fraction(1, 4 * self.a * y1 ** 2)) *\
+            x3 = ((1 / (4 * self.a * y1 ** 2))) *\
                  (self.a ** 2  * x1 **4 - 2 * self.a * self.c * x1 ** 2\
                     - 8* self.a * self.d * x1 - 4 * self.b * self.d)
-            y3 = Fraction(1, 8 * self.a * y1 ** 3) *\
+            y3 = (1 / (8 * self.a * y1 ** 3)) *\
                  (self.a ** 3 * x1 ** 6 + 2 * self.a **2  * self.b * x1 ** 5\
                     + 5 * self.a**2 * self.c * x1 ** 4  + 20 * self.a ** 2 * self.d * x1 ** 3\
                     + (20 * self.a * self.b * self.d - 5 * self.a * self.c **2) * x1**2\
@@ -130,34 +130,34 @@ class EllipticCurveModPrimeNum():
             return (x3, y3)
         
 win = st.number_input("素数", min_value=2)  
-st.write('y^2=x^3+1割る素数')
-weight = st.number_input("xを入力してください", min_value=0)
+st.write('y^2=ax^3+bx^2+cx+d')
+weight = st.number_input("xを入力してください", min_value=-100)
 st.write(weight*weight*weight+1)
-weighta = st.number_input("yを入力しください", min_value=0)      
+weighta = st.number_input("yを入力しください", min_value=-100)      
 st.write(weighta*weighta)
-weightb = st.number_input("Xを入力ください", min_value=0)
+weightb = st.number_input("Xを入力ください", min_value=-100)
 st.write(weightb*weightb*weightb+1)
-weightac = st.number_input("Yを入ください", min_value=0)      
+weightac = st.number_input("Yを入ください", min_value=-100)      
 st.write(weightac*weightac)
 pt1 = (weight,weighta)
 pt2=(weightb,weightac)
-st.write("(x,y)+(X,Y)")
-gg = st.number_input("z",min_value=0)
-st.write(gg*win)
-st.write((weightb*weightb*weightb+1)-(weightac*weightac))
+weight1 = st.number_input("aを入力してください", min_value=-100)
+weight2 = st.number_input("bを入力してください", min_value=-100)
+weight3 = st.number_input("cを入力してください", min_value=-100)
+weight4 = st.number_input("dを入力してください", min_value=-100)
 
 
-if st.button("クリック"):
+if st.button("mod"):
     
     st.write(win)    
     kannsuu=win
     ell = EllipticCurveModPrimeNum(1,0,0,1,win)
     st.write(ell.sum(pt1,pt2))
 
-if st.button("アタック"):
+if st.button("modなし"):
     
     st.write(win)    
     kannsuu=win
-    ell = EllipticCurve(1,0,0,1)
+    ell = EllipticCurve(weight1,weight2,weight3,weight4)
     st.write(ell.sum(pt1,pt2))
       
