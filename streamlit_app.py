@@ -1,7 +1,7 @@
 # Streamlitライブラリをインポート
 import streamlit as st
 kannsuu=7
-
+import math
 # ページ設定（タブに表示されるタイトル、表示幅）
 st.set_page_config(page_title="タイトル", layout="wide")
 
@@ -137,6 +137,7 @@ win = st.number_input("素数", min_value=2)
 st.write('y^2=ax^3+bx^2+cx+d')
 weight = st.number_input("xを入力してください", min_value=-100)
 st.write(weight1*weight*weight*weight+weight2*weight*weight+weight3*weight+weight4)
+st.write(math.sqrt(weight1*weight*weight*weight+weight2*weight*weight+weight3*weight+weight4))
 weighta = st.number_input("yを入力しください", min_value=-100)      
 st.write(weighta*weighta)
 weightb = st.number_input("Xを入力ください", min_value=-100)
