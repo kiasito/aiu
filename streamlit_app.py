@@ -128,7 +128,11 @@ class EllipticCurveModPrimeNum():
             ) % self.p
 
             return (x3, y3)
-        
+
+weight1 = st.number_input("aを入力してください", min_value=-100)
+weight2 = st.number_input("bを入力してください", min_value=-100)
+weight3 = st.number_input("cを入力してください", min_value=-100)
+weight4 = st.number_input("dを入力してください", min_value=-100)        
 win = st.number_input("素数", min_value=2)  
 st.write('y^2=ax^3+bx^2+cx+d')
 weight = st.number_input("xを入力してください", min_value=-100)
@@ -141,10 +145,7 @@ weightac = st.number_input("Yを入ください", min_value=-100)
 st.write(weightac*weightac)
 pt1 = (weight,weighta)
 pt2=(weightb,weightac)
-weight1 = st.number_input("aを入力してください", min_value=-100)
-weight2 = st.number_input("bを入力してください", min_value=-100)
-weight3 = st.number_input("cを入力してください", min_value=-100)
-weight4 = st.number_input("dを入力してください", min_value=-100)
+
 
 
 if st.button("mod"):
